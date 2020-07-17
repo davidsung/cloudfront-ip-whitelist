@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:RevokeSecurityGroupIngress"
+            ],
+            "Resource": "arn:aws:ec2:${region}:${account_id}:security-group/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:DescribeSecurityGroups",
+            "Resource": "*"
+        },
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                 "logs:CreateLogStream",
+                 "logs:PutLogEvents"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:logs:*:*:*"
+        }
+    ]
+}
